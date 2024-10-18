@@ -1,0 +1,15 @@
+.contact {
+  // text-align: center;
+
+  > h1 {
+    font-size: 72px;
+    text-align: center;
+  }
+
+  .contact__form {
+    display: flex;
+    justify-content: center;
+    // min-width: 450px;
+    // width: 50vw;
+  }
+}

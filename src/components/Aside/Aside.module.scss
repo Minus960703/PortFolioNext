@@ -1,0 +1,66 @@
+@import '@/styles/DefaultValueVariable.scss';
+
+.aside {
+  position          : fixed;
+  width             : 250px;
+  height            : 100vh;
+
+  >.aside__logo {
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    margin          : 30px auto;
+    font-size       : $--font-logo;
+    font-weight     : $--weight-bold;
+  }
+
+  >.aside__menu {
+    
+    > ul {
+
+      &.aside__work {
+        padding-bottom: 30px;
+      }
+
+      > li {
+        display: flex;
+        justify-content: center;
+        // cursor: pointer;
+        box-sizing: border-box;
+        padding: 0 5px;
+
+        > b {
+          cursor: pointer;
+          margin: 5px 0;
+          > a {
+            color: $--color-gray;
+          }
+
+          &.active {
+            > a {
+              color: $--color-black;
+            }
+          }
+        }
+      }
+
+      &.aside__social {
+        margin: 30px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        > li {
+          > button {
+            width: 35px;
+            aspect-ratio: 1 / 1;
+            border: 0;
+            background-color: transparent;
+            cursor: pointer;
+          } 
+        }
+      }
+    }
+
+  }
+}
