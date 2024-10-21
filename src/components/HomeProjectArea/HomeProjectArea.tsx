@@ -3,16 +3,18 @@
 import { ProjectListStateContext } from '@/context';
 import React, { useContext } from 'react'
 import styles from './HomeProjectArea.module.scss';
+import { useRouter } from 'next/navigation';
 
-type Props = {}
-
-function HomeProjectArea({ }: Props) {
+function HomeProjectArea() {
   const { projectList } = useContext(ProjectListStateContext);
-
-  console.log(projectList);
+  const router = useRouter();
 
   if (!projectList.length) {
     return null;
+  }
+
+  const moveToPage = (value: string) => {
+    router.push(`/work/${value}`);
   }
   
   return (
@@ -20,7 +22,9 @@ function HomeProjectArea({ }: Props) {
       {
         projectList.map((project) => {
           return (
-            <div className={styles.home__project} key={project.id}>
+            <div className={styles.home__project} key={project.id}
+              onClick={() => moveToPage(project.value)}
+            >
               <div className={styles.home__image}></div>
               <div className={styles.overlay}>
                 <h2>{project.name_KR}</h2>
