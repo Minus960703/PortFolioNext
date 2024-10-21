@@ -1,4 +1,7 @@
 @import './DefaultValueVariable.scss';
+@import './aboutPage.scss';
+@import './contactPage.scss';
+@import './homePage.scss';
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400..800&display=swap');
 // @import url('https://fonts.googleapis.com/css2?family=Cute+Font&family=Oxanium:wght@200..800&family=Tilt+Neon&display=swap');
 
@@ -65,7 +68,7 @@ main {
 //   background-color: $--color-white;
 // }
 
-button {
+button, input, textarea {
   font-family : inherit;
   font-size   : inherit;
   font-weight : inherit;
