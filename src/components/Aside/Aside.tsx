@@ -1,49 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './Aside.module.scss';
 import Link from 'next/link';
 import { IconImage } from '../IconImage/IconImage';
 import { usePathname } from 'next/navigation';
-
-const ProjectsArray = [
-  {
-    id: 1,
-    name_KR: '짐닭포토',
-    name_EN: 'GymdakPhoto',
-    name_JP: '일본어로짐닭포토',
-    value: 'gymdakphoto',
-  },
-  {
-    id: 2,
-    name_KR: '짐닭포토2',
-    name_EN: 'GymdakPhoto2',
-    name_JP: '일본어로짐닭포토2',
-    value: 'gymdakphoto',
-  },
-  {
-    id: 3,
-    name_KR: '짐닭포토3',
-    name_EN: 'GymdakPhoto3',
-    name_JP: '일본어로짐닭포토3',
-    value: 'gymdakphoto',
-  },
-  {
-    id: 4,
-    name_KR: '짐닭포토4',
-    name_EN: 'GymdakPhoto4',
-    name_JP: '일본어로짐닭포토4',
-    value: 'gymdakphoto',
-  },
-  {
-    id: 5,
-    name_EN: 'GymdakPhoto5',
-    name_JP: '일본어로짐닭포토5',
-    value: 'gymdakphoto',
-  },
-]
+import { ProjectListStateContext } from '@/context';
 
 function Aside() {
+  const { projectList } = useContext(ProjectListStateContext);
   const pathname = usePathname();
   const moveToPage = (path: 'INSTAGRAM' | 'GITHUB') => {
     let url = '';
@@ -67,8 +32,8 @@ function Aside() {
               <Link href={'/'}>WORK</Link>
             </b>
           </li>
-          {ProjectsArray.length
-            && ProjectsArray.map((project) => {
+          {projectList.length
+            && projectList.map((project) => {
               return (
                 <li key={project.id}>
                   <Link href={`/work/${project.value}`}>

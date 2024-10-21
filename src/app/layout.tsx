@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@/styles/global.scss";
-import "@/styles/homePage.scss";
-import "@/styles/contactPage.scss";
 // import MainLayout from './layouts/MainLayout';
 import { Modal } from '@/components';
-import { ThemeStateProvider, ModalStateProvider, LanguageStateProvider } from '@/context';
+import { ThemeStateProvider, ModalStateProvider, LanguageStateProvider, ProjectListStateProvider } from '@/context';
 import AsideLayout from './layouts/AsideLayout';
 
 // const geistSans = localFont({
@@ -17,7 +15,7 @@ import AsideLayout from './layouts/AsideLayout';
 //   src: "./fonts/GeistMonoVF.woff",
 //   variable: "--font-geist-mono",
 //   weight: "100 900",
-// });
+// });\
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -36,16 +34,18 @@ export default function RootLayout({
       >
         <ThemeStateProvider>
           <LanguageStateProvider>
-            <ModalStateProvider>
-              {/* <MainLayout> */}
-              <AsideLayout>
-                <main>
-                  {children}
-                </main>
-              </AsideLayout>
-              {/* </MainLayout> */}
-              <Modal />
-            </ModalStateProvider>
+            <ProjectListStateProvider>
+              <ModalStateProvider>
+                {/* <MainLayout> */}
+                <AsideLayout>
+                  <main>
+                    {children}
+                  </main>
+                </AsideLayout>
+                {/* </MainLayout> */}
+                <Modal />
+              </ModalStateProvider>
+            </ProjectListStateProvider>
           </LanguageStateProvider>
         </ThemeStateProvider>
       </body>

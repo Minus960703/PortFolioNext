@@ -4,6 +4,7 @@ import { ModalStateContext } from '@/context/ModalStateContext';
 import React, { useContext, useEffect } from 'react'
 import styles from './Modal.module.scss';
 import { ThemeStateContext } from '@/context';
+import { Button } from '../Button/Button';
 
 function isDiscernModal(type: 'A' | 'C' | 'L' | 'S') {
   switch (type) {
@@ -21,20 +22,20 @@ function isDiscernModal(type: 'A' | 'C' | 'L' | 'S') {
 }
 
 function Modal() {
-  const { modalOpen, type, closeModal } = useContext(ModalStateContext);
+  const { modalState, closeModal } = useContext(ModalStateContext);
 
-  const ModalComponent = isDiscernModal(type);
+  const ModalComponent = isDiscernModal(modalState['type']);
 
   useEffect(() => {
-    modalOpen
+    modalState.active
       ? document.documentElement.style.overflow = "hidden"
       : document.documentElement.style.overflow = "unset"
     return () => {
       document.documentElement.style.overflow = "unset"
     }
-  }, [modalOpen])
+  }, [modalState.active]);
 
-  if (!modalOpen) return null;
+  if (!modalState.active) return null;
 
   if (!ModalComponent) return null;  
 
@@ -47,7 +48,7 @@ function Modal() {
 }
 
 function SettingModal() {
-  const { modalOpen, type, closeModal } = useContext(ModalStateContext);
+  const { modalState, closeModal } = useContext(ModalStateContext);
   const { theme } = useContext(ThemeStateContext);
 
   return (
@@ -156,9 +157,36 @@ function ConfirmModal() {
 }
 
 function AlertModal() {
+  const { modalState, closeModal } = useContext(ModalStateContext);
+  const { theme } = useContext(ThemeStateContext);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [closeModal]);
+  
   return (
-    <div className={styles.modal__whiteground}>
-      aa
+    <div
+      className={`${styles.modal__whiteground}
+                  ${theme === 'dark' ? styles.modal__dark : styles.modal__light}
+                  ${styles.modal__alert}
+      `}
+    >
+      <p>
+        <b dangerouslySetInnerHTML={{__html: modalState.content}} />
+      </p>
+      <div className={styles.btn__area}>
+        <Button value={'확인'} onClickEvent={() => closeModal()}/>
+      </div>
     </div>
   )
 }

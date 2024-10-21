@@ -1,23 +1,13 @@
-import Image from 'next/image'
+// import { getProjectList } from '@/api/Home/project';
 
-export default function Home() {
+import { HomeProjectArea } from '@/components';
+
+async function HomePage() {
   return (
     <section className='home'>
-      <div className="home__project">
-        <div className="home__image"></div>
-        <div className="overlay">
-          <h2>background</h2>
-        </div>
-      </div>
-      <div className="home__project">
-
-      </div>
-      <div className="home__project">
-
-      </div>
-      <div className="home__project">
-
-      </div>
+      <HomeProjectArea />
     </section>
   )
 }
+
+export default HomePage;

@@ -4,6 +4,7 @@ import { IconImage } from './IconImage/IconImage';
 import { Aside } from './Aside/Aside';
 import { Form } from './Form/Form';
 import { TextField } from './TextField/TextField';
+import { HomeProjectArea } from './HomeProjectArea/HomeProjectArea';
 
 export {
   Header,
@@ -12,4 +13,5 @@ export {
   Aside,
   Form,
   TextField,
+  HomeProjectArea
 }

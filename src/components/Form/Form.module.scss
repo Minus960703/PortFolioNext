@@ -22,5 +22,19 @@
       border-radius: 4px;
       border: 1px solid $--color-gray-light;
     }
+
+    > textarea {
+      width: 100%;
+      // max-height: calc(133px - 32 * 2px);
+      background-color: $--color-white;
+      border: 1px solid $--color-gray-light;
+      border-radius: 4px;
+      outline: none;
+      resize: none;
+      overflow: auto;
+      margin: 0;
+      padding-left: 14px;
+      padding-top: 8px;
+    }
   }
 }

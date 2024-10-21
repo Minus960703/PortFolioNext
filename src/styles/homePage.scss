@@ -4,34 +4,4 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 50%);
-
-  .home__project {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-color: aqua;
-    border: 1px solid #ccc;
-
-    .home__image {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background-color: #ccc;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 90%;
-      opacity: 0;
-      aspect-ratio: 1 / 1;
-      transform: translate(-50%, -50%);
-      background-color: rgba($--color-white, .75);
-      transition: .3s all ease;
-    }
-
-    &:hover .overlay {
-      opacity: 1;
-    }
-  }
 }
