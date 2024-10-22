@@ -5,10 +5,13 @@ import styles from './Aside.module.scss';
 import Link from 'next/link';
 import { IconImage } from '../IconImage/IconImage';
 import { usePathname } from 'next/navigation';
-import { ProjectListStateContext } from '@/context';
+import { LanguageStateContext, ProjectListStateContext, ThemeStateContext } from '@/context';
+import { LanguageList } from '@/api/Header/HeaderObject';
 
 function Aside() {
   const { projectList } = useContext(ProjectListStateContext);
+  const { theme, onClickThemeButton } = useContext(ThemeStateContext);
+  const { language, onClickLanguage } = useContext(LanguageStateContext);
   const pathname = usePathname();
   const moveToPage = (path: 'INSTAGRAM' | 'GITHUB') => {
     let url = '';
@@ -19,7 +22,10 @@ function Aside() {
   }
   
   return (
-    <aside className={styles.aside}>
+    <aside className={`
+      ${styles.aside}
+      ${theme === 'dark' ? styles.dark : styles.light}
+    `}>
       <div className={styles.aside__logo}>
         <Link href={'/'}>
           GYMDAK
@@ -59,6 +65,34 @@ function Aside() {
               </Link>
             </b>
           </li>
+        </ul>
+        <ul className={styles.aside__theme}>
+          <li>
+            <button
+              className={theme === 'dark' ? `${styles[theme]}` : undefined}
+              onClick={() => onClickThemeButton(theme === 'dark' ? 'light' : 'dark')}
+            >
+              {theme === 'light'
+                ? <IconImage icon="DARK"/>
+                : <IconImage icon="LIGHT"/>
+              }
+            </button>
+          </li>
+        </ul>
+        <ul className={styles.aside__language}>
+          {LanguageList.length
+            &&
+            LanguageList.map((currentLang) => {
+              return (
+                <li
+                  className={language === currentLang.value ? styles.active : undefined}
+                  onClick={() => onClickLanguage(`${currentLang.value}`)}
+                  key={currentLang.id}
+                >
+                  {currentLang.name}
+                </li>
+              )
+            })}
         </ul>
         <ul className={styles.aside__social}>
           <li>

@@ -20,6 +20,7 @@ html, body {
   font-optical-sizing: auto;
   // font-weight: <weight>;
   font-style: normal;
+  transition: .25s all ease-in;
 
   &.KR {
     font-family: "Cute Font", sans-serif;
@@ -37,6 +38,25 @@ html, body {
   &.JP {
 
   }
+}
+
+.dark {
+  background-color: $--color-black;
+  color: $--color-white;
+
+  a {
+    color: $--color-white;
+  }
+
+  // .language__setting {
+  //   li {
+  //     color: $--color-gray-medium;
+  //   }
+
+  //   .language__active {
+  //     color: $--color-white;
+  //   }
+  // }
 }
 
 ::-webkit-scrollbar {

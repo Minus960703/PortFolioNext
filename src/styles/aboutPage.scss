@@ -1,14 +1,24 @@
 .about {
-  padding-top: 32px;
+  padding: 32px 0;
   
   >h1 {
     font-size: 72px;
     text-align: center;
   }
 
-  .about__more {
-    > button {
-      cursor: pointer;
-    }
+  ::-webkit-scrollbar {
+    width: 2px;
+    // background: #DDDDDD;
+    border-radius: 20px;
+    display: block;
+    height: 4px;
+
+  }
+
+  ::-webkit-scrollbar-thumb {
+    width: 2px;
+    height: 4px;
+    background: $--color-gray;
+    border-radius: 20px;
   }
 }

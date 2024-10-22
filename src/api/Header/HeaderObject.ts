@@ -76,9 +76,9 @@ export const LanguageList: LanguageListProps[] = [
     name: 'EN',
     value: 'EN'
   },
-  {
-    id: 3,
-    name: 'JP',
-    value: 'JP'
-  },
+  // {
+  //   id: 3,
+  //   name: 'JP',
+  //   value: 'JP'
+  // },
 ];
