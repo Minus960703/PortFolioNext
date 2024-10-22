@@ -5,6 +5,25 @@
   width             : 250px;
   height            : 100vh;
 
+  &.dark {
+    .aside__menu {
+      > ul {
+        > li {
+          &.active {
+            color: $--color-white;
+          }
+          > b {
+            &.active {
+              > a {
+                color: $--color-white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   >.aside__logo {
     display         : flex;
     align-items     : center;
@@ -58,6 +77,41 @@
             background-color: transparent;
             cursor: pointer;
           } 
+        }
+      }
+
+      &.aside__theme {
+        margin: 30px auto 10px;
+        > li {
+          > button {
+            cursor: pointer;
+            width: 35px;
+            aspect-ratio: 1 / 1;
+            border: 1px solid $--color-gray-light;
+            border-radius: 50%;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+      
+      &.aside__language {
+        margin: 10px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        > li {
+          cursor: pointer;
+          color: $--color-gray;
+
+          &.active {
+            color: inherit;
+            font-weight: $--weight-medium;
+          }
         }
       }
     }

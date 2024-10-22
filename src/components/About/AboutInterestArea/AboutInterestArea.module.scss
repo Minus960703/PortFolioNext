@@ -1,0 +1,21 @@
+@import '@/styles/DefaultValueVariable.scss';
+
+.about__interest {
+
+  .tech__area {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    height: 150px;
+    gap: 20px;
+    padding-bottom: 20px;
+
+    .tech__image {
+      width: 140px;
+      aspect-ratio: 1 / 1;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 2px $--color-gray;
+    }
+  }
+}
