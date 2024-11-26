@@ -29,6 +29,12 @@ const getProjectList = async () => {
   return stocks as ProjectProps[];
 };
 
+const getProjectContent = async () => {
+  const { data: stocks, error } = await supabase
+    .from('project_content')
+    .select('id, name_KR, name_EN, name_JP, thumbnail, value');
+}
+
 export {
   getProjectList
 };

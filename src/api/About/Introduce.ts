@@ -21,8 +21,16 @@ const Introduce: IntroduceProps = {
               개발과 취미 생활에서 창의성과 도전하는 것을 중요하게 생각하며, 계속해서 성장하고 발전하는 개발자가 되고자 합니다.`
   },
   name_EN: {
-    title: '3',
-    content:'4',
+    title: 'Hello, This is Jinwoo Choi.',
+    content: `As a passionate frontend developer, I aim to change the world through development and always strive to learn and apply new technologies with enthusiasm.\n
+              I am particularly interested in component modularization and reusability, as well as rendering performance, Three.js, and WebGPU.
+              \n
+              I have been working as a web developer for nearly three years, primarily using technologies such as JavaScript, React, and Next.js.\n
+              I enjoy tackling challenges and discussing problems from various perspectives.
+              \n
+              When I’m not coding, I like to create needle felting art, work out, and engage in various creative activities.\n
+              I value creativity and a spirit of challenge in both development and my hobbies, and I am committed to continuous growth and development as a developer.
+              `,
   }
 }
 

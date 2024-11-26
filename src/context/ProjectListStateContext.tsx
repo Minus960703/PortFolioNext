@@ -20,6 +20,7 @@ export const ProjectListStateProvider: FC<{ children: ReactNode }> = ({ children
     if (isBrowser()) {
       getProjectList()
         .then((result) => {
+          console.log(result);
           setProjectList(result);
           setIsProjectListLoaded(true);
         });

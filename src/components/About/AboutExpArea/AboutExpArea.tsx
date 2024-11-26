@@ -15,6 +15,7 @@ function AboutExpArea({ experienceList }: AboutExpAreaProps) {
       <div className={styles.exp__container}>
         {experienceList.length
           && experienceList.map((experience) => {
+            console.log(experience);
             return (
               <div className={styles.exp__area} key={experience.id}>
                 <div className={styles.exp__image}></div>

@@ -9,7 +9,7 @@ async function AboutPage() {
     <section className='about'>
       <h1>ABOUT</h1>
       <AboutIntroArea />
-      <AboutInterestArea />
+      {/* <AboutInterestArea /> */}
       <AboutExpArea experienceList={experienceList} />
       <AboutMoreArea />
     </section>

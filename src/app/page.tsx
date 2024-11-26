@@ -1,5 +1,3 @@
-// import { getProjectList } from '@/api/Home/project';
-
 import { HomeProjectArea } from '@/components';
 
 async function HomePage() {

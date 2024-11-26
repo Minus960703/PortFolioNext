@@ -1,10 +1,12 @@
+import { supabase } from '@/supabase/supabaseClient';
 import React from 'react'
 
-type Props = {}
+async function WorkDetailPage() {
 
-function WorkDetailPage({}: Props) {
   return (
-    <div>WorkDetailPage</div>
+    <section>
+      WorkDetailPage
+    </section>
   )
 }
 
